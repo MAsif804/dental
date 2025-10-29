@@ -58,30 +58,33 @@ const Frequently = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
-            className="flex w-full  mx-auto px-4 sm:px-6 md:px-8 lg:px-[88px] py-8 sm:py-[35px] flex-col md:flex-row justify-between items-center gap-8 md:gap-10 lg:gap-12  overflow-hidden bg-no-repeat"
+            className="relative w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-[88px] py-10 sm:py-[35px] flex flex-col items-center overflow-hidden bg-no-repeat"
         >
-            <div className="flex w-full flex-col items-start sm:items-center md:items-center gap-4 sm:gap-5 md:gap-[40px]">
-                <div className="flex w-full flex-col items-center gap-3 sm:gap-[15px]">
-                    <h6 className="text-black font-Montagu text-2xl sm:text-3xl md:text-[64px] font-semibold leading-normal sm:leading-normal text-center">
+            <div className="relative z-10 w-full max-w-[900px] flex flex-col items-center gap-6 sm:gap-8">
+                <div className="flex w-full flex-col items-center gap-2 sm:gap-3">
+                    <h6 className="text-black font-Montagu text-2xl sm:text-3xl md:text-[40px] lg:text-[48px] font-semibold text-center">
                         Frequently Asked Questions (FAQ)
                     </h6>
-                    {/* <p className="text-black font-Montagu text-base sm:text-lg md:text-xl lg:text-[22px] text-center leading-relaxed sm:leading-[26px] font-normal px-2 sm:px-4 md:px-8 lg:px-16">
-                        Experienced & Caring Professionals
-                    </p> */}
                 </div>
-                <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 sm:gap-5 md:gap-[40px]">
+                <div className="w-full">
                     <Accordion type="single" collapsible className="w-full">
-                        {CardTitle.map((item) => (
+                        {CardTitle.map((item, idx) => (
                             <AccordionItem className="w-full border-none" key={item.id} value={item.id.toString()}>
-                                <AccordionTrigger className="text-black w-full font-Montagu text-base sm:text-lg md:text-xl lg:text-[26px] text-center leading-relaxed sm:leading-normal font-semibold px-2 sm:px-4 md:px-8 lg:px-16">{item.title}</AccordionTrigger>
-                                <AccordionContent className="text-black font-Montagu text-base sm:text-lg md:text-xl lg:text-[20px] text-left leading-relaxed sm:leading-[26px] font-semibold px-2 sm:px-4 md:px-8 lg:px-16">{item.describe}</AccordionContent>
+                                <AccordionTrigger className="text-black w-full font-Montagu text-base sm:text-lg md:text-xl lg:text-[22px] leading-relaxed font-semibold px-2 sm:px-3 md:px-4 lg:px-0">
+                                    <span className="flex items-center gap-2">
+                                        <span className="font-bold">{idx + 1}.</span>
+                                        <span>{item.title}</span>
+                                    </span>
+                                </AccordionTrigger>
+                                <AccordionContent className="text-black font-Poetsen text-sm sm:text-base md:text-[18px] text-left leading-relaxed px-2 sm:px-3 md:px-4 lg:px-0">
+                                    {item.describe}
+                                </AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
                 </div>
-
             </div>
-        </section >
+        </section>
     );
 };
 export default Frequently;

@@ -1,4 +1,5 @@
-import { Card, CardContent } from "../ui/card";
+import { useEffect, useState } from "react";
+import { Card } from "../ui/card";
 
 const CardTitle = [
     {
@@ -34,6 +35,28 @@ const CardTitle = [
 ]
 
 const MeetMyTeam = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [autoPlay, setAutoPlay] = useState(false);
+    
+    // Enable auto-move only on mobile/tablet (below lg: 1024px)
+    useEffect(() => {
+        const mq = window.matchMedia('(min-width: 1024px)');
+        const update = () => setAutoPlay(!mq.matches);
+        update();
+        mq.addEventListener('change', update);
+        return () => mq.removeEventListener('change', update);
+    }, []);
+
+    // Auto advance slider when autoPlay is enabled
+    useEffect(() => {
+        if (!autoPlay) return;
+        const id = setInterval(() => {
+            setActiveIndex((i) => (i + 1) % CardTitle.length);
+        }, 3000);
+        return () => clearInterval(id);
+    }, [autoPlay, activeIndex]);
+    const active = CardTitle[activeIndex];
+
     return (
         <section
             style={{
@@ -41,38 +64,67 @@ const MeetMyTeam = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
-            className="flex w-full  mx-auto px-4 sm:px-6 md:px-8 lg:px-[88px] py-8 sm:py-[35px] flex-col md:flex-row justify-between items-center gap-8 md:gap-10 lg:gap-12  overflow-hidden bg-no-repeat"
+            className="relative w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-[88px] py-10 sm:py-[35px] flex flex-col items-center overflow-hidden bg-no-repeat"
         >
-            <div className="flex w-full flex-col items-start sm:items-center md:items-center gap-4 sm:gap-5 md:gap-[40px]">
-                <div className="flex w-full flex-col items-center gap-3 sm:gap-[15px]">
-                    <h6 className="text-black font-Montagu text-2xl sm:text-3xl md:text-[64px] font-semibold leading-normal sm:leading-normal text-center">
+            {/* gradient corner to mirror reference look */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-teal-900/40 via-teal-700/30 to-white/40" />
+
+            <div className="relative z-10 max-w-[1440px] mx-auto w-full flex flex-col items-center gap-6 sm:gap-8">
+                <div className="flex w-full flex-col items-center gap-2 sm:gap-3">
+                    <h6 className="text-black font-Montagu text-3xl sm:text-4xl md:text-[48px] lg:text-[56px] font-semibold text-center">
                         Meet Our Team
                     </h6>
-                    <p className="text-black font-Montagu text-base sm:text-lg md:text-xl lg:text-[22px] text-center leading-relaxed sm:leading-[26px] font-normal px-2 sm:px-4 md:px-8 lg:px-16">
+                    <p className="text-black font-Montagu text-base sm:text-lg md:text-xl text-center">
                         Experienced & Caring Professionals
                     </p>
                 </div>
-                <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-[40px]">
-                    {CardTitle.map((item) => (
-                        <Card
-                            key={item.id} className="relative bg-[#000] flex flex-col items-center justify-center p-none gap-2 sm:gap-3 md:gap-[16px] w-[350px] h-[392px]  border-none rounded-[46px]">
-                            <CardContent
-                                style={{
-                                    boxShadow: "-3px -3px 4px 0 rgba(0, 0, 0, 0.25), 0 96px 0 0 #000",
-                                }}
-                                className="flex p-0 flex-col items-start gap-2 sm:gap-3 md:gap-[16px]">
-                                <img src={item.imag} alt={item.title} className="absolute top-[0px] left-0 rounded-[46px] h-[40px] sm:w-[60px] sm:h-[60px] md:w-[350px] md:h-[300px]" />
-                                <p className="absolute bottom-[25px] left-[15%] text-white font-Montagu text-sm sm:text-base md:text-[26px] text-center sm:text-center md:text-center leading-relaxed sm:leading-normal font-semibold">
 
-                                    {item.title}
-                                </p>
-                            </CardContent>
+                {/* Mobile & Tablet: Single-card slider */}
+                <div className="flex flex-col items-center gap-3 lg:hidden">
+                    <Card
+                        key={active.id}
+                        className="w-full max-w-[360px] sm:max-w-[420px] md:max-w-[500px] rounded-[40px] overflow-hidden border-none shadow-xl bg-black"
+                    >
+                        <img
+                            src={active.imag}
+                            alt={active.title}
+                            className="w-full h-[380px] sm:h-[420px] md:h-[480px] object-cover"
+                        />
+                        <div className="bg-black px-6 py-5">
+                            <p className="text-white font-Montagu text-xl sm:text-2xl md:text-[26px] text-center">
+                                {active.title}
+                            </p>
+                        </div>
+                    </Card>
+
+                    {/* Dot indicators */}
+                    <div className="flex items-center gap-3 mt-2">
+                        {CardTitle.map((_, i) => (
+                            <button
+                                key={i}
+                                aria-label={`Show team member ${i + 1}`}
+                                onClick={() => setActiveIndex(i)}
+                                className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                                    activeIndex === i ? "bg-[#0EA5A6]" : "bg-gray-400/60"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Desktop: Grid of cards */}
+                <div className="hidden lg:grid w-full grid-cols-3 gap-6">
+                    {CardTitle.map((member) => (
+                        <Card key={member.id} className="rounded-[40px] overflow-hidden border-none shadow-xl bg-black">
+                            <img src={member.imag} alt={member.title} className="w-full h-[260px] lg:h-[320px] object-cover" />
+                            <div className="bg-black px-5 py-4">
+                                <p className="text-white font-Montagu text-lg lg:text-xl text-center">{member.title}</p>
+                            </div>
                         </Card>
                     ))}
                 </div>
-
             </div>
-        </section >
+        </section>
     );
 };
 export default MeetMyTeam;

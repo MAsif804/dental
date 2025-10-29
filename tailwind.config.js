@@ -65,7 +65,9 @@ export default {
   			Poppins: 'Poppins',
   			Langar: 'Langar',
   			Montagu: 'Montagu Slab',
-  			Poetsen: 'Poetsen One'
+  			Poetsen: 'Poetsen One',
+  			Lancelot: 'Lancelot',
+  			LoveLight: 'Love Light'
   		},
   		keyframes: {
   			'accordion-down': {

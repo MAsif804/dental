@@ -4,19 +4,23 @@ import Header from "../ui/header";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-[500px] h-screen flex flex-col items-center bg-[url('/hero-image.png')]  bg-cover  bg-no-repeat overflow-hidden">
+    <section className="relative w-full min-h-[560px] h-[100svh] flex flex-col items-stretch bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat overflow-hidden">
 
       {/* Background pattern */}
-      <div className="absolute inset-0  bg-[#5D807300] opacity-90"
+      <div
+        className="absolute inset-0 opacity-60"
         style={{
-          backgroundImage: `url("/bg-hero.png")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundImage: `url('/bg-hero.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       />
+      {/* Gradient overlay to improve legibility on all screens */}
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-700/70 via-teal-600/40 to-transparent" />
       <Header />
-      <div className=" absolute top-[350px] left-[0px] px-4 sm:px-6 md:px-10 lg:px-[88px] w-full max-w-[1440px] mx-auto">
-        <div className="w-full max-w-[320px] sm:max-w-[350px] md:max-w-[650px] px-0 sm:pl-4 md:pl-8 mx-auto text-center lg:text-left lg:mx-0">
+      {/* Content container: vertically center and align left on large screens */}
+      <div className="relative z-10 w-full h-full px-4 sm:px-6 md:px-10 lg:px-[88px] max-w-[1440px] mx-auto flex items-center justify-center lg:justify-start">
+        <div className="w-full max-w-[650px] px-0 sm:pl-4 md:pl-8 text-center lg:text-left">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[64px] font-Montagu font-bold text-black leading-normal md:leading-relaxed lg:leading-normal mb-3 sm:mb-4 md:mb-6">
             Brighter Smiles,
             Healthier Lives
