@@ -280,12 +280,12 @@ export function Dropdown({ menuActive }: { menuActive: boolean }) {
           </DropdownMenuContent>
         </DropdownMenu>
       </li>
-      <li className="flex lg:hidden w-full items-center justify-center border-b-theme-black border-b-[1px]">
+      <li className="flex lg:hidden w-full items-start  ">
         <DropdownMenu>
           <DropdownMenuTrigger
-            className={`text-black outline-none flex justify-center items-center gap-[3px] py-[16px] hover:bg-theme-green hover:text-white capitalize font-poppins text-[16px] font-semibold ${isPathActive("/category")
+            className={`text-[#036E64] outline-none flex justify-center items-center gap-[3px] hover:bg-theme-green hover:text-white capitalize font-poppins text-lg font-semibold ${isPathActive("/category")
                 ? "text-white bg-theme-green"
-                : "text-black hover:text-white"
+                : "text-white hover:text-white"
               }`}
           >
            <span className="relative">

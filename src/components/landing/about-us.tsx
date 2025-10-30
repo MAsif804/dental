@@ -74,7 +74,7 @@ const AboutUs = () => {
             </Card>
             {/* card-2 & card-3 */}
             <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] m-2">
+              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] ">
                 <img src="./about-2.svg" alt={` icon`} className="w-10 h-10 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px]" />
                 <h6 className="text-[#000] font-Montagu text-base sm:text-xl md:text-[26px] font-semibold">
                   Our Mission
@@ -83,7 +83,7 @@ const AboutUs = () => {
                   To deliver innovative solutions that improve lives and contribute to a better future.
                 </p>
               </Card>
-              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] m-2">
+              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] ">
                 <img src="./about-3.svg" alt={` icon`} className="w-10 h-10 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px]" />
                 <h6 className="text-[#000] font-Montagu text-base sm:text-xl md:text-[26px] font-semibold">
                   Our Vision
@@ -96,7 +96,7 @@ const AboutUs = () => {
             </div>
             {/* card-4 & card-5 */}
             <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" >
-              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] m-2">
+              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] ">
                 <img src="./about-4.svg" alt={` icon`} className="w-10 h-10 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px]" />
                 <h6 className="text-[#000] font-Montagu text-base sm:text-xl md:text-[26px] font-semibold">
                   Who We Are
@@ -105,7 +105,7 @@ const AboutUs = () => {
                   To deliver innovative solutions that improve lives and contribute to a better future.
                 </p>
               </Card>
-              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] m-2">
+              <Card className="flex w-full flex-col px-4 sm:px-6 md:px-[46px] py-6 items-center gap-3 sm:gap-[12px] rounded-[20px] border-none bg-[#FFFFFFC4] ">
                 <img src="./about-5.svg" alt={` icon`} className="w-10 h-10 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px]" />
                 <h6 className="text-[#000] font-Montagu text-base sm:text-xl md:text-[26px] font-semibold">
                   Who We Serve

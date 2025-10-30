@@ -2,7 +2,7 @@ import Header from "../ui/header";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-[500px] h-screen flex flex-col items-center bg-[url('/treatments-bg.jpg')] bg-cover bg-no-repeat bg-center overflow-hidden">
+    <section className="relative w-full min-h-[560px] h-[100svh] flex flex-col items-stretch bg-[url('/treatments-bg.jpg')] bg-cover bg-no-repeat bg-center overflow-hidden">
 
       {/* Background pattern */}
       <div className="absolute inset-0  bg-[#5D807300] opacity-90"
@@ -12,10 +12,12 @@ const Hero = () => {
           backgroundPosition: "center",
         }}
       />
+      {/* Gradient overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-800/70 via-teal-700/40 to-transparent pointer-events-none" />
       <Header />
-      <div className=" absolute top-1/2 left-[0px] px-4 sm:px-6 md:px-10 lg:px-[88px] w-full max-w-[1440px] mx-auto">
-        <div className="w-full max-w-[320px] sm:max-w-[350px] md:max-w-[750px] px-0 sm:pl-4 md:pl-8 mx-auto text-center lg:text-left lg:mx-0">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[64px] font-Montagu font-bold text-black leading-normal md:leading-relaxed lg:leading-normal mb-3 sm:mb-4 md:mb-6">
+      <div className="relative z-10 w-full h-full px-4 sm:px-6 md:px-10 lg:px-[88px] max-w-[1440px] mx-auto flex items-center justify-center lg:justify-start">
+        <div className="w-full max-w-[700px] px-0 sm:pl-4 md:pl-8 text-center lg:text-left">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[64px] font-Montagu font-bold text-black leading-tight md:leading-relaxed lg:leading-normal mb-3 sm:mb-4 md:mb-6">
             Healthy <span className="text-white">Smiles</span>,
             <br />
              <span className="text-white">Lasting</span> Confidence

@@ -39,12 +39,12 @@ const Header = () => {
       <div className="flex w-full items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-[10px] w-auto sm:w-[192px]">
-          <img src="/dental-logo.png" alt="Dental Logo" className="absolute w-[100px] sm:w-[200px] h-[100px] sm:h-[200px] aspect-square" />
+          <img onClick={() => window.location.href = "/"} src="/dental-logo.png" alt="Dental Logo" className="absolute z-10 w-[100px] sm:w-[200px] h-[100px] sm:h-[200px] aspect-square cursor-pointer" />
         </div>
 
         {/* Mobile menu button */}
         <button
-          className="flex md:hidden flex-col justify-center items-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none"
+          className="flex lg:hidden flex-col justify-center items-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -54,7 +54,7 @@ const Header = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-4 lg:gap-[30px] xl:gap-[42px]">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-[30px] xl:gap-[42px]">
           <ul className="flex py-4 sm:py-[20px] items-center gap-4 lg:gap-[20px] xl:gap-[30px]">
             <li className="cursor-pointer uppercase font-Poppins text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-normal">
               <Link
@@ -114,7 +114,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <button className="relative hidden sm:flex h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]">
+        <button className="relative hidden lg:flex h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]">
           <span className="text-white font-Langar text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-semibold">
             Book Now
           </span>
@@ -124,7 +124,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-[60px] left-0 right-0 bg-[#036E64] border-t border-[#036E64] z-50 shadow-lg">
+        <div className="md:hidden absolute top-[50px] left-0 right-0 bg-[#036E64] border-t border-[#036E64] z-0 shadow-lg">
           <div className="px-4 py-3 space-y-1">
             <ul className="flex flex-col space-y-4 py-3">
               <a href="/" onClick={toggleMenu}>
@@ -144,7 +144,7 @@ const Header = () => {
                 </li>
               </a>
               <a href="/blogs" onClick={toggleMenu}>
-                <li className="cursor-pointer hover:text-white data-[state=active]:text-white text-[#FDED1B] font-Open text-lg font-semibold">
+                <li className="cursor-pointer hover:text-white data-[state=active]:text-white text-white font-Open text-lg font-semibold">
                   Blogs 
                 </li>
               </a>
