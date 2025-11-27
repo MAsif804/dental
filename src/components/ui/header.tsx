@@ -73,7 +73,7 @@ const Header = () => {
             <a href="/company">
               <li className="cursor-pointer uppercase font-Poppins text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-normal">
                 <Link
-                  to="/"
+                  to="/our-package"
                   className={`group relative uppercase pb-2 text-white  ${isPathActive("/") ? "text-white" : "text-white"}`}
                 >
                   <span className="relative">

@@ -5,6 +5,7 @@ import LandingPage from "./pages/landing";
 import Treatments from "./pages/treatments";
 import ServicesDetailPage from "./pages/services-detail";
 import ScrollToTop from "./utils/scroll-to-top";
+import OurPackagePage from "./pages/our-package";
 
 const App = () => {
   return (
@@ -19,7 +20,9 @@ const App = () => {
             path="/treatments/:slug"
             element={<ServicesDetailPage />}
           />
+          <Route path="/our-package" element={<OurPackagePage />} />
         </Routes>
+        
       </BrowserRouter>
       <Footer />
     </>
