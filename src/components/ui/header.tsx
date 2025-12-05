@@ -133,7 +133,7 @@ const Header = () => {
                 </li>
               </a>
               <Dropdown menuActive={isActive} />
-              <a href="/our-packages" onClick={toggleMenu}>
+              <a href="/our-package" onClick={toggleMenu}>
                 <li className="cursor-pointer hover:text-[#036E64] data-[state=active]:text-[#036E64] text-white font-Poppins text-lg font-semibold">
                   Our Packages
                 </li>
