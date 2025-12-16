@@ -6,6 +6,7 @@ import Treatments from "./pages/treatments";
 import ServicesDetailPage from "./pages/services-detail";
 import ScrollToTop from "./utils/scroll-to-top";
 import OurPackagePage from "./pages/our-package";
+import BookNow from "./pages/book-detail";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             element={<ServicesDetailPage />}
           />
           <Route path="/our-package" element={<OurPackagePage />} />
+          <Route path="/book-now" element={<BookNow />} />
         </Routes>
         
       </BrowserRouter>

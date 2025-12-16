@@ -114,7 +114,9 @@ const Header = () => {
           </ul>
         </div>
 
-        <button className="relative hidden lg:flex h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]">
+        <button
+          onClick={() => window.location.href = "/book-now"}
+         className="relative hidden lg:flex h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]">
           <span className="text-white font-Langar text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-semibold">
             Book Now
           </span>
