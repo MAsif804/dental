@@ -31,6 +31,7 @@ const Hero = () => {
             let us help you achieve it with expert dental care.
           </p>
           <Button
+            onClick={() => (window.location.href = "/book-now")}
             className="bg-white hover:bg-[#F0F0F0] text-[#0D1323] text-base sm:text-lg font-medium px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 rounded-[20px] sm:rounded-[20px] border border-[#000]"
           >
             <span className="font-Langar text-[#171F31] text-sm sm:text-base md:text-[16px] font-medium leading-normal sm:leading-loose md:leading-[50px]"> Schedule Your Appointment Today</span> <Diamond className="ml-1 text-[#2F88FF] fill-[#2F88FF] sm:ml-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 aspect-square" />

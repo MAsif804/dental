@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -39,7 +38,12 @@ const Header = () => {
       <div className="flex w-full items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-[10px] w-auto sm:w-[192px]">
-          <img onClick={() => window.location.href = "/"} src="/dental-logo.png" alt="Dental Logo" className="absolute z-10 w-[100px] sm:w-[200px] h-[100px] sm:h-[200px] aspect-square cursor-pointer" />
+          <img
+            onClick={() => (window.location.href = "/")}
+            src="/dental-logo.png"
+            alt="Dental Logo"
+            className="absolute z-10 w-[100px] sm:w-[200px] h-[100px] sm:h-[200px] aspect-square cursor-pointer"
+          />
         </div>
 
         {/* Mobile menu button */}
@@ -48,9 +52,21 @@ const Header = () => {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-current mb-1.5 transition-transform ${isActive ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-opacity ${isActive ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current mt-1.5 transition-transform ${isActive ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span
+            className={`block w-6 h-0.5 bg-current mb-1.5 transition-transform ${
+              isActive ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-current transition-opacity ${
+              isActive ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-current mt-1.5 transition-transform ${
+              isActive ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
         </button>
 
         {/* Desktop Navigation */}
@@ -59,7 +75,9 @@ const Header = () => {
             <li className="cursor-pointer uppercase font-Poppins text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-normal">
               <Link
                 to="/"
-                className={`group relative uppercase pb-2 text-white  ${isPathActive("/") ? "text-white" : "text-white"}`}
+                className={`group relative uppercase pb-2 text-white  ${
+                  isPathActive("/") ? "text-white" : "text-white"
+                }`}
               >
                 <span className="relative">
                   Home
@@ -74,7 +92,9 @@ const Header = () => {
               <li className="cursor-pointer uppercase font-Poppins text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-normal">
                 <Link
                   to="/our-package"
-                  className={`group relative uppercase pb-2 text-white  ${isPathActive("/") ? "text-white" : "text-white"}`}
+                  className={`group relative uppercase pb-2 text-white  ${
+                    isPathActive("/") ? "text-white" : "text-white"
+                  }`}
                 >
                   <span className="relative">
                     Our Packages
@@ -88,7 +108,9 @@ const Header = () => {
               <li className="cursor-pointer uppercase font-Poppins text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-normal">
                 <Link
                   to="/"
-                  className={`group relative uppercase pb-2 text-white  ${isPathActive("/") ? "text-white" : "text-white"}`}
+                  className={`group relative uppercase pb-2 text-white  ${
+                    isPathActive("/") ? "text-white" : "text-white"
+                  }`}
                 >
                   <span className="relative">
                     Denatal Health Tips
@@ -102,7 +124,9 @@ const Header = () => {
               <li className="cursor-pointer uppercase font-Poppins text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-normal">
                 <Link
                   to="/"
-                  className={`group relative uppercase pb-2 text-white  ${isPathActive("/") ? "text-white" : "text-white"}`}
+                  className={`group relative uppercase pb-2 text-white  ${
+                    isPathActive("/") ? "text-white" : "text-white"
+                  }`}
                 >
                   <span className="relative">
                     Blogs
@@ -115,8 +139,9 @@ const Header = () => {
         </div>
 
         <button
-          onClick={() => window.location.href = "/book-now"}
-         className="relative hidden lg:flex h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]">
+          onClick={() => (window.location.href = "/book-now")}
+          className="relative hidden lg:flex h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]"
+        >
           <span className="text-white font-Langar text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-semibold">
             Book Now
           </span>
@@ -147,10 +172,19 @@ const Header = () => {
               </a>
               <a href="/blogs" onClick={toggleMenu}>
                 <li className="cursor-pointer hover:text-white data-[state=active]:text-white text-white font-Open text-lg font-semibold">
-                  Blogs 
+                  Blogs
                 </li>
               </a>
             </ul>
+            <button
+              onClick={() => (window.location.href = "/book-now")}
+              className="relative flex lg:hidden h-10 sm:h-[42px] border-[3px] border-white rounded-[20px] bg-transparent px-[18px]  py-[12px] items-center gap-3 sm:gap-[12px]"
+            >
+              <span className="text-white font-Langar text-base sm:text-lg lg:text-[16px] xl:text-[20px] font-semibold">
+                Book Now
+              </span>
+              <ArrowRightIcon className="w-4 h-4 stroke-[3px] text-white" />
+            </button>
           </div>
         </div>
       )}
